@@ -1,5 +1,6 @@
 package com.nodzigames.heroesofgrannard.scenarios;
 
+import com.nodzigames.heroesofgrannard.enemies.Badabook;
 import com.nodzigames.heroesofgrannard.enemies.Birb;
 import com.nodzigames.heroesofgrannard.enemies.Slime;
 
@@ -15,7 +16,7 @@ public class Scene1 extends Scenario {
         enemies.add(new Slime());
         enemies.add(new Birb());
         enemies.add(new Slime());
-        enemies.add(new Birb());
+        enemies.add(new Badabook());
 
 
         //Add Loot

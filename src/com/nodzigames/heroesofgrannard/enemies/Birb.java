@@ -18,10 +18,10 @@ public class Birb extends Enemy {
         setXp(Maths.random_range_int(15, 25));
 
         //Set Up Shouts
-        shouts.add("Swiggity!");
-        shouts.add("Swooty!");
+        shouts.add("Swiggity");
+        shouts.add("Swooty");
         shouts.add("Do u want sum f*k?");
-        shouts.add("Becky!");
-        shouts.add("Ben is a hoe!");
+        shouts.add("Becky");
+        shouts.add("Ben is a hoe");
     }
 }
