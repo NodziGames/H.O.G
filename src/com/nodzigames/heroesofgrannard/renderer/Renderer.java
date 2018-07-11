@@ -93,6 +93,10 @@ public class Renderer {
         }
     }
 
+    public static void gameOver(Player player) {
+        print("Game Over!");
+    }
+
 
 
 

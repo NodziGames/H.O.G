@@ -14,9 +14,6 @@ public class Scene1 extends Scenario {
 
         //Add Enemies
         enemies.add(new Slime());
-        enemies.add(new Birb());
-        enemies.add(new Slime());
-        enemies.add(new Badabook());
 
 
         //Add Loot
@@ -25,9 +22,10 @@ public class Scene1 extends Scenario {
 
         //Add Actions That You Can Take
 
-        actions.add(A_EXPLORE);
+        actions.add(A_FIGHT);
         actions.add(A_SLEEP);
         actions.add(A_STATS);
-        actions.add(A_FIGHT);
+        actions.add(A_EXPLORE);
+
     }
 }

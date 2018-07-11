@@ -8,6 +8,7 @@ import com.nodzigames.heroesofgrannard.classes.Samurai;
 import com.nodzigames.heroesofgrannard.renderer.Renderer;
 import com.nodzigames.heroesofgrannard.scenarios.Scenario;
 import com.nodzigames.heroesofgrannard.scenarios.Scene1;
+import com.nodzigames.heroesofgrannard.scenarios.Scene2;
 import com.nodzigames.heroesofgrannard.validation.Parser;
 
 import java.util.Scanner;
@@ -64,6 +65,21 @@ public class Stepper {
     public String getInput(String prompt) {
         System.out.print("\n" + prompt + " => ");
         return scanner.nextLine().trim();
+    }
+
+    public void changeScene() {
+
+        int pick = Maths.random_range_int(1,2);
+
+        switch(pick) {
+            case 1:
+                scene = new Scene1();
+                break ;
+            case 2:
+                scene = new Scene2();
+                break ;
+        }
+
     }
 
 
@@ -187,7 +203,7 @@ public class Stepper {
 
         state = "main_loop";
 
-        scene = new Scene1();
+        changeScene();
     }
 
 
@@ -199,7 +215,7 @@ public class Stepper {
 
     public void main_loop_step() {
 
-        while (true) {
+        while (player.getHp() > 0) {
 
             Renderer.cls();
 
@@ -223,7 +239,7 @@ public class Stepper {
             }
             else if (action.equals(A_EXPLORE)) {
                 Renderer.print("\n\nYou leave " + scene.getName() + " and proceed towards the next location...");
-                scene = new Scene1();
+                changeScene();
             }
             else if (action.equals(A_SLEEP)) {
                 Renderer.cls();
@@ -267,12 +283,12 @@ public class Stepper {
             //Player attack
             long dmg = player.getStrength() + Maths.random_range_int(-20, 20);
             Renderer.print("You attack the " + enemy.getName() + " for " + dmg + " potential damage!");
-            Renderer.print("The " + enemy.getName() + " blocks " + enemy.getDefense() + " damage");
-            Renderer.print("The " + enemy.getName() + " takes a total of " + Math.max(1, dmg - enemy.getDefense()) + " damage!");
             player.shout();
+            Renderer.print("\nThe " + enemy.getName() + " blocks " + enemy.getDefense() + " damage");
+            Renderer.print("The " + enemy.getName() + " takes a total of " + Math.max(1, dmg - enemy.getDefense()) + " damage!");
             enemy.takeDamage(dmg);
             Renderer.print("\n" + enemy.getName() + " HP: " + (enemy.getHp() + Math.max(1, dmg - enemy.getDefense())) + " -> " + enemy.getHp());
-            Renderer.print("\n");
+            Renderer.print("\n\n");
 
             waiter();
 
@@ -287,15 +303,21 @@ public class Stepper {
                 //Attack the player back
                 long dmg2 = enemy.getStrength() + Maths.random_range_int(-20, 20);
                 Renderer.print("The " + enemy.getName() + " attacks you for " + dmg2 + " potential damage!");
-                Renderer.print("You block for " + player.getDefense() + " damage");
-                Renderer.print("You take a total of " + Math.max(1, dmg2 - player.getDefense()) + " damage!");
                 enemy.shout();
+                Renderer.print("\nYou block for " + player.getDefense() + " damage");
+                Renderer.print("You take a total of " + Math.max(1, dmg2 - player.getDefense()) + " damage!");
                 player.takeDamage(dmg2);
                 Renderer.print("\nYour HP: " + (player.getHp() + Math.max(1, dmg2 - player.getDefense())) + " -> " + player.getHp());
-                Renderer.print("\n");
+                Renderer.print("\n\n");
 
                 waiter();
             }
+        }
+
+        if (player.getHp() <= 0) {
+            state = "menu";
+            Renderer.cls();
+            Renderer.gameOver(player);
         }
 
         if (scene.enemies.size() == 0) {
