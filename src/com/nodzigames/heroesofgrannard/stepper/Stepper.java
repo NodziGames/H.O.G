@@ -223,6 +223,7 @@ public class Stepper {
             }
             else if (action.equals(A_EXPLORE)) {
                 Renderer.print("\n\nYou leave " + scene.getName() + " and proceed towards the next location...");
+                scene = new Scene1();
             }
             else if (action.equals(A_SLEEP)) {
                 Renderer.cls();

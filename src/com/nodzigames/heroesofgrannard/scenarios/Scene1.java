@@ -1,5 +1,6 @@
 package com.nodzigames.heroesofgrannard.scenarios;
 
+import com.nodzigames.heroesofgrannard.enemies.Birb;
 import com.nodzigames.heroesofgrannard.enemies.Slime;
 
 import static com.nodzigames.heroesofgrannard.consts.ActionConsts.*;
@@ -12,9 +13,9 @@ public class Scene1 extends Scenario {
 
         //Add Enemies
         enemies.add(new Slime());
+        enemies.add(new Birb());
         enemies.add(new Slime());
-        enemies.add(new Slime());
-        enemies.add(new Slime());
+        enemies.add(new Birb());
 
 
         //Add Loot
@@ -26,7 +27,6 @@ public class Scene1 extends Scenario {
         actions.add(A_EXPLORE);
         actions.add(A_SLEEP);
         actions.add(A_STATS);
-        if (enemies.size() > 0)
-            actions.add(A_FIGHT);
+        actions.add(A_FIGHT);
     }
 }
