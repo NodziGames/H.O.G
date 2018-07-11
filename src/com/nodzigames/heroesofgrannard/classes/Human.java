@@ -1,4 +1,4 @@
-package com.nodzigames.heroesofgrannard.races;
+package com.nodzigames.heroesofgrannard.classes;
 
 
 public class Human extends Player{
@@ -8,10 +8,10 @@ public class Human extends Player{
         setName(name);
         setAge(age);
 
-        //Class Specific stats (Has to total 600, and every 5 vitality counts as 1 point)
-        setStrength(120);
-        setDefense(80);
-        setIntelligence(95);
+        //Class Specific stats (Has to total 400, and every 5 vitality counts as 1 point)
+        setStrength(100);
+        setDefense(100);
+        setIntelligence(100);
         setVitality(500);
         setHp(getVitality());
 

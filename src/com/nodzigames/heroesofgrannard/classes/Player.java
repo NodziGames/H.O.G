@@ -1,7 +1,7 @@
-package com.nodzigames.heroesofgrannard.races;
+package com.nodzigames.heroesofgrannard.classes;
 
 
-//All races will inherit from the player class, overriding some of the functionality.
+//All classes will inherit from the player class, overriding some of the functionality.
 
 import com.nodzigames.heroesofgrannard.maths.Maths;
 import com.nodzigames.heroesofgrannard.renderer.Renderer;
@@ -221,7 +221,7 @@ public class Player {
         return "=== Character Details ===\n" +
                 "Name: " + name + "\n" +
                 "Age: " + age + "\n" +
-                "Race: " + getClass().getSimpleName() + "\n" +
+                "Class: " + getClass().getSimpleName() + "\n" +
                 "\n" +
                 "==== Character Stats ====\n" +
                 "Strength: " + strength + "\n" +

@@ -2,8 +2,9 @@ package com.nodzigames.heroesofgrannard.stepper;
 import com.nodzigames.heroesofgrannard.enemies.Enemy;
 import com.nodzigames.heroesofgrannard.maths.Maths;
 import com.nodzigames.heroesofgrannard.npcs.GenericNpc;
-import com.nodzigames.heroesofgrannard.races.Human;
-import com.nodzigames.heroesofgrannard.races.Player;
+import com.nodzigames.heroesofgrannard.classes.Human;
+import com.nodzigames.heroesofgrannard.classes.Player;
+import com.nodzigames.heroesofgrannard.classes.Samurai;
 import com.nodzigames.heroesofgrannard.renderer.Renderer;
 import com.nodzigames.heroesofgrannard.scenarios.Scenario;
 import com.nodzigames.heroesofgrannard.scenarios.Scene1;
@@ -130,10 +131,8 @@ public class Stepper {
         hagrid.speak("Good! I can almost take my lunch break... Please select a race. This will affect your stats so choose carefully!\n");
 
         //Show the player the options
-        Renderer.print("Human: Well Balanced All Around Fighter");
-        Renderer.print("Mock1: Does things");
-        Renderer.print("Mock2: Does things");
-        Renderer.print("Mock3: Does things");
+        Renderer.print("Human: Just A Regular Joe With Well Balanced Stats");
+        Renderer.print("Samurai: Smart, Strikes Hard, But Tends To Be More Fragile");
         Renderer.print("\n");
 
         String class_input = getInput("Race");
@@ -143,10 +142,8 @@ public class Stepper {
             Renderer.cls();
             hagrid.speak("No no no, that is not a valid race. Please select one from the list below!\n");
             //Show the player the options
-            Renderer.print("Human: Well Balanced All Around Fighter");
-            Renderer.print("Mock1: Does things");
-            Renderer.print("Mock2: Does things");
-            Renderer.print("Mock3: Does things");
+            Renderer.print("Human: Just A Regular Joe With Well Balanced Stats");
+            Renderer.print("Samurai: Smart, Strikes Hard, But Tends To Be More Fragile");
 
             class_input = getInput("Race");
         }
@@ -158,6 +155,9 @@ public class Stepper {
         //Make a new character
         if (class_input.equalsIgnoreCase("human")) {
             player = new Human(name, age);
+        }
+        else if (class_input.equalsIgnoreCase("samurai")) {
+            player = new Samurai(name, age);
         }
 
         waiter();
@@ -222,11 +222,11 @@ public class Stepper {
                 Renderer.wrongAction();
             }
             else if (action.equals(A_EXPLORE)) {
-                Renderer.print("\nResult:\n\nYou leave " + scene.getName() + " and proceed towards the next location...");
+                Renderer.print("\n\nYou leave " + scene.getName() + " and proceed towards the next location...");
             }
             else if (action.equals(A_SLEEP)) {
                 Renderer.cls();
-                Renderer.print("\nResult:\n\nYou decide to take a short nap that turns into hours of sleeping. You wake up feeling refreshed!\n");
+                Renderer.print("You decide to take a short nap that turns into hours of sleeping. You wake up feeling refreshed!\n");
                 player.setHp(player.getVitality());
                 Renderer.printEvent("HP Fully Restored!");
                 scene.actions.remove(A_SLEEP);
@@ -278,7 +278,7 @@ public class Stepper {
             if (enemy.getHp() <= 0) {
                 //Enemy die etc
                 Renderer.cls();
-                Renderer.print("You win!");
+                Renderer.print("Victory is yours! The " + enemy.getName() + " crumbles before you...\n");
                 player.addGold(enemy.getGold());
                 player.addXp(enemy.getXp());
             }

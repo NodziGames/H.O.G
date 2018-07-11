@@ -2,7 +2,7 @@ package com.nodzigames.heroesofgrannard.renderer;
 
 import com.nodzigames.heroesofgrannard.enemies.Enemy;
 import com.nodzigames.heroesofgrannard.maths.Maths;
-import com.nodzigames.heroesofgrannard.races.Player;
+import com.nodzigames.heroesofgrannard.classes.Player;
 
 public class Renderer {
 
@@ -67,7 +67,7 @@ public class Renderer {
                 break ;
         }
 
-        print("\n" + "Result: \n\n" + dialogue);
+        print("\n\n" + dialogue);
     }
 
     public static void encounter(Enemy enemy) {

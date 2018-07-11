@@ -30,7 +30,7 @@ public class Parser {
     public static boolean classParse(String class_input) {
 
         class_input = class_input.toLowerCase();
-        if (!class_input.contains("human") && !class_input.contains("mock1") && !class_input.contains("mock2") && !class_input.contains("mock3")) {
+        if (!class_input.contains("human") && !class_input.contains("samurai")) {
             return false;
         }
         else
