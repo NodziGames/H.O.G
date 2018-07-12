@@ -7,6 +7,6 @@ public class Kamishimo_1 extends Armor {
         setDefense(5);
         setIntelligence(15);
         setDescription("Traditional Samurai wear, except this one was made in China and not Japan");
-        setName("Basic Kamishimo_1");
+        setName("Basic Kamishimo");
     }
 }

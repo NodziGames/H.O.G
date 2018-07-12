@@ -9,7 +9,7 @@ public class Birb extends Enemy {
         setName("Birb");
 
         setDefense(0);
-        setStrength(85);
+        setStrength(100);
         setVitality(250);
         setHp(getVitality());
 

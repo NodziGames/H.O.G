@@ -8,8 +8,8 @@ public class Slime extends Enemy {
 
         setName("Slime");
 
-        setDefense(10);
-        setStrength(50);
+        setDefense(25);
+        setStrength(100);
         setVitality(200);
         setHp(getVitality());
 

@@ -7,8 +7,7 @@ import com.nodzigames.heroesofgrannard.classes.Player;
 import com.nodzigames.heroesofgrannard.classes.Samurai;
 import com.nodzigames.heroesofgrannard.renderer.Renderer;
 import com.nodzigames.heroesofgrannard.scenarios.Scenario;
-import com.nodzigames.heroesofgrannard.scenarios.Scene1;
-import com.nodzigames.heroesofgrannard.scenarios.Scene2;
+import com.nodzigames.heroesofgrannard.scenarios.*;
 import com.nodzigames.heroesofgrannard.validation.Parser;
 
 import java.util.Scanner;
@@ -69,7 +68,7 @@ public class Stepper {
 
     public void changeScene() {
 
-        int pick = Maths.random_range_int(1,2);
+        int pick = Maths.random_range_int(1,3);
 
         switch(pick) {
             case 1:
@@ -77,6 +76,9 @@ public class Stepper {
                 break ;
             case 2:
                 scene = new Scene2();
+                break ;
+            case 3:
+                scene = new Scene3();
                 break ;
         }
 
