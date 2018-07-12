@@ -51,6 +51,6 @@ public class Weapon {
 
     @Override
     public String toString() {
-        return (name + ": STR(" + strength + ") INT(" + intelligence + ")");
+        return ("< " + name + " > STR(" + strength + ") INT(" + intelligence + ")\nDescription: " + description + "\n");
     }
 }

@@ -71,6 +71,7 @@ public class Player {
     //EVENTS =======================================================
 
     public void levelUp() {
+        Stepper.waiter();
         Renderer.cls();
         int strengthChange = getLevel();//Math.round(strength / 10);
         int defenseChange = getLevel();//Math.round(defense / 10);
@@ -223,7 +224,7 @@ public class Player {
 
     @Override
     public String toString() {
-        return "=== Character Details ===\n" +
+        return "=== Character Details ===\n\n" +
                 "Name: " + name + "\n" +
                 "Age: " + age + "\n" +
                 "Class: " + getClass().getSimpleName() + "\n" +
@@ -237,9 +238,9 @@ public class Player {
                 "Gold: " + gold + "\n" +
                 "XP: " + xp + " / " + xpreq + "\n" +
                 "Level: " + level + "\n" +
-                "\n" +
-                "======= Equipment =======\n" +
+                "\n\n" +
+                "======= Equipment =======\n\n" +
                 "Weapon: " + weapon.toString() + "\n" +
-                "Armor: " + armor.toString();
+                "Armor: " + armor.toString() + "\n";
     }
 }

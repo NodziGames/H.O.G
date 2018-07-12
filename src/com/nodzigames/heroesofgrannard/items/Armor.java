@@ -50,6 +50,6 @@ public class Armor {
 
     @Override
     public String toString() {
-        return (name + ": DEF(" + defense + ") INT(" + intelligence + ")");
+        return ("< " + name + " > DEF(" + defense + ") INT(" + intelligence + ")\nDescription: " + description + "\n");
     }
 }
