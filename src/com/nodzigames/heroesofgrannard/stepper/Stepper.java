@@ -148,7 +148,7 @@ public class Stepper {
 
         //Show the player the options
         Renderer.print("Human: Just A Regular Joe With Well Balanced Stats");
-        Renderer.print("Samurai: Smart, Strikes Hard, But Tends To Be More Fragile");
+        Renderer.print("Samurai: Slightly More Fragile, But Strikes Harder When Shouting Loud Obnoxious Japanese Phrases");
         Renderer.print("\n");
 
         String class_input = getInput("Race");
@@ -159,7 +159,7 @@ public class Stepper {
             hagrid.speak("No no no, that is not a valid race. Please select one from the list below!\n");
             //Show the player the options
             Renderer.print("Human: Just A Regular Joe With Well Balanced Stats");
-            Renderer.print("Samurai: Smart, Strikes Hard, But Tends To Be More Fragile");
+            Renderer.print("Samurai:  Slightly More Fragile, But Strikes Harder When Shouting Loud Obnoxious Japanese Phrases");
 
             class_input = getInput("Race");
         }

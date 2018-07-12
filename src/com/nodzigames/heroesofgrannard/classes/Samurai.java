@@ -1,7 +1,7 @@
 package com.nodzigames.heroesofgrannard.classes;
 
-import com.nodzigames.heroesofgrannard.items.BareFists_1;
-import com.nodzigames.heroesofgrannard.items.Yeezies_1;
+import com.nodzigames.heroesofgrannard.items.Kamishimo_1;
+import com.nodzigames.heroesofgrannard.items.KendoStick_1;
 
 public class Samurai extends Player {
     //Constructor
@@ -9,8 +9,8 @@ public class Samurai extends Player {
         setName(name);
         setAge(age);
 
-        weapon = new BareFists_1();
-        armor = new Yeezies_1();
+        weapon = new KendoStick_1();
+        armor = new Kamishimo_1();
 
         //Class Specific stats (Has to total 400, and every 5 vitality counts as 1 point)
         setStrength(130);
@@ -20,13 +20,13 @@ public class Samurai extends Player {
         setHp(getVitality());
 
         //Set Up Shouts
-        shouts.add("TEMMEEEE");
-        shouts.add("SHINDE");
-        shouts.add("OWARITA");
-        shouts.add("YAMETE");
+        shouts.add("KAKATTE KOI YO");
+        shouts.add("SHINDE KUDUSAI");
+        shouts.add("KURAE");
+        shouts.add("SASERU KA");
         shouts.add("OMAE WA MOU SHINDEIRU");
-        shouts.add("NANI?");
-        shouts.add("DAMEDE");
-        shouts.add("USODARO?");
+        shouts.add("YURUSENAI");
+        shouts.add("CHIKUSHO");
+        shouts.add("YOSSHA");
     }
 }
