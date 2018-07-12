@@ -1,6 +1,6 @@
 package com.nodzigames.heroesofgrannard.scenarios;
 
-import com.nodzigames.heroesofgrannard.enemies.Badabook;
+import com.nodzigames.heroesofgrannard.enemies.Badabook_1;
 
 import static com.nodzigames.heroesofgrannard.consts.ActionConsts.A_EXPLORE;
 import static com.nodzigames.heroesofgrannard.consts.ActionConsts.A_FIGHT;
@@ -14,8 +14,8 @@ public class Scene_1_3 extends Scenario {
         setName("Day Care Center");
 
         //Add Enemies
-        enemies.add(new Badabook());
-        enemies.add(new Badabook());
+        enemies.add(new Badabook_1());
+        enemies.add(new Badabook_1());
 
 
         //Add Loot

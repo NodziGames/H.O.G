@@ -2,8 +2,8 @@ package com.nodzigames.heroesofgrannard.enemies;
 
 import com.nodzigames.heroesofgrannard.maths.Maths;
 
-public class Badabook extends Enemy{
-    public Badabook() {
+public class Badabook_1 extends Enemy{
+    public Badabook_1() {
 
         setName("Badabook");
 

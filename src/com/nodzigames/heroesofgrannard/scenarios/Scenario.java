@@ -6,6 +6,8 @@ import com.nodzigames.heroesofgrannard.renderer.Renderer;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.nodzigames.heroesofgrannard.consts.ActionConsts.*;
+
 public class Scenario {
 
     //Generic Scenario Class. Details to be filled in on classes that inherit from this.
@@ -38,10 +40,26 @@ public class Scenario {
         System.out.print("\n\n");
     }
 
-    public void listActions() {
+    public void listActions(long moves) {
         Renderer.print("=== Possible Actions ===\n");
         for (String action : actions) {
-            Renderer.print("< " + action + " >");
+            switch (action) {
+                case A_FIGHT:
+                    System.out.print("(F) ");
+                    break ;
+                case A_EXPLORE:
+                    System.out.print("(E) ");
+                    break ;
+                case A_STATS:
+                    System.out.print("(T) ");
+                    break ;
+                case A_SLEEP:
+                    System.out.print("(S) ");
+            }
+            if (action.equals(A_EXPLORE))
+                Renderer.print("< " + action + " >" + " Moves Left: " + moves + " / 10");
+            else
+                Renderer.print("< " + action + " >");
         }
     }
 

@@ -1,7 +1,7 @@
 package com.nodzigames.heroesofgrannard.scenarios;
 
-import com.nodzigames.heroesofgrannard.enemies.Birb;
-import com.nodzigames.heroesofgrannard.enemies.Slime;
+import com.nodzigames.heroesofgrannard.enemies.Birb_1;
+import com.nodzigames.heroesofgrannard.enemies.Slime_1;
 
 import static com.nodzigames.heroesofgrannard.consts.ActionConsts.*;
 
@@ -12,8 +12,8 @@ public class Scene_1_2 extends Scenario {
         setName("Great Lake");
 
         //Add Enemies
-        enemies.add(new Slime());
-        enemies.add(new Birb());
+        enemies.add(new Slime_1());
+        enemies.add(new Birb_1());
 
 
         //Add Loot

@@ -21,6 +21,10 @@ public class Stepper {
     public static Scanner scanner;
     public Player player;
     public Scenario scene;
+    public long moves;
+
+    //After every X Moves, Go Back To Town, Then Up Portal Level
+    public int portalLevel;
 
 
     //Initialize NPCs
@@ -29,6 +33,8 @@ public class Stepper {
     public Stepper() {
         state = "menu";
         scanner = new Scanner(System.in);
+        portalLevel = 1;
+        moves = 10;
     }
 
     public void step() {
@@ -69,18 +75,23 @@ public class Stepper {
 
     public void changeScene() {
 
-        int pick = Maths.random_range_int(1,3);
+        int pick = Maths.random_range_int(1,4);
 
-        switch(pick) {
-            case 1:
-                scene = new Scene_1_1();
-                break ;
-            case 2:
-                scene = new Scene_1_2();
-                break ;
-            case 3:
-                scene = new Scene_1_3();
-                break ;
+        if (portalLevel == 1) {
+            switch (pick) {
+                case 1:
+                    scene = new Scene_1_1();
+                    break;
+                case 2:
+                    scene = new Scene_1_2();
+                    break;
+                case 3:
+                    scene = new Scene_1_3();
+                    break;
+                case 4:
+                    scene = new Scene_1_4();
+                    break ;
+            }
         }
 
     }
@@ -155,7 +166,7 @@ public class Stepper {
         Renderer.print("Grunt: Strong, Durable, But Not The Brightest Of The Bunch");
         Renderer.print("\n");
 
-        String class_input = getInput("Race");
+        String class_input = getInput("Class");
 
         while (!Parser.classParse(class_input))
         {
@@ -166,7 +177,7 @@ public class Stepper {
             Renderer.print("Samurai:  Slightly More Fragile, But Strikes Harder When Shouting Loud Obnoxious Japanese Phrases");
             Renderer.print("Grunt: Strong, Durable, But Not The Brightest Of The Bunch");
 
-            class_input = getInput("Race");
+            class_input = getInput("Class");
         }
 
         Renderer.cls();
@@ -223,7 +234,7 @@ public class Stepper {
 
     public void main_loop_step() {
 
-        while (player.getHp() > 0) {
+        while (player.getHp() > 0 && moves >= 0) {
 
             Renderer.cls();
 
@@ -235,7 +246,7 @@ public class Stepper {
 
             scene.listEnemies();
 
-            scene.listActions();
+            scene.listActions(moves);
 
             String action = getInput("Action");
 
@@ -244,23 +255,20 @@ public class Stepper {
             //Manage all the actions here!
             if (action.equals(A_NONE)) {
                 Renderer.wrongAction();
-            }
-            else if (action.equals(A_EXPLORE)) {
+            } else if (action.equals(A_EXPLORE)) {
                 Renderer.print("\n\nYou leave " + scene.getName() + " and proceed towards the next location...");
                 changeScene();
-            }
-            else if (action.equals(A_SLEEP)) {
+                moves -= 1;
+            } else if (action.equals(A_SLEEP)) {
                 Renderer.cls();
                 Renderer.print("You decide to take a short nap that turns into hours of sleeping. You wake up feeling refreshed!\n");
                 player.setHp(player.getVitality());
                 Renderer.printEvent("HP Fully Restored!");
                 scene.actions.remove(A_SLEEP);
-            }
-            else if (action.equals(A_STATS)) {
+            } else if (action.equals(A_STATS)) {
                 Renderer.cls();
                 Renderer.print(player.toString());
-            }
-            else if (action.equals(A_FIGHT)) {
+            } else if (action.equals(A_FIGHT)) {
                 Renderer.cls();
                 fight(scene.enemies.get(0));
             }
@@ -270,8 +278,13 @@ public class Stepper {
             if (!player.levelUpCheck()) {
                 waiter();
             }
-
         }
+
+        town();
+
+
+
+
     }
 
 
@@ -331,5 +344,13 @@ public class Stepper {
         if (scene.enemies.size() == 0) {
             scene.actions.remove(A_FIGHT);
         }
+    }
+
+    public void town() {
+        Renderer.cls();
+        Renderer.drawPortal();
+        moves = 10;
+        //Increase portalLevel here too!
+        waiter();
     }
 }

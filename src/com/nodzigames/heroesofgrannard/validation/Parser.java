@@ -2,7 +2,7 @@ package com.nodzigames.heroesofgrannard.validation;
 
 import java.util.List;
 
-import static com.nodzigames.heroesofgrannard.consts.ActionConsts.A_NONE;
+import static com.nodzigames.heroesofgrannard.consts.ActionConsts.*;
 
 public class Parser {
 
@@ -39,6 +39,19 @@ public class Parser {
 
     public static String parseAction(List<String> actions, String action) {
         action = action.toLowerCase();
+
+        //Parse Shorter Inputs
+        if (action.equals("f"))
+            action = A_FIGHT;
+
+        if (action.equals("e"))
+            action = A_EXPLORE;
+
+        if (action.equals("t"))
+            action = A_STATS;
+
+        if (action.equals("s"))
+            action = A_SLEEP;
 
         if (actions.contains(action))
             return(action);

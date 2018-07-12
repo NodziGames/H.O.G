@@ -1,8 +1,6 @@
 package com.nodzigames.heroesofgrannard.scenarios;
 
-import com.nodzigames.heroesofgrannard.enemies.Badabook;
-import com.nodzigames.heroesofgrannard.enemies.Birb;
-import com.nodzigames.heroesofgrannard.enemies.Slime;
+import com.nodzigames.heroesofgrannard.enemies.Slime_1;
 
 import static com.nodzigames.heroesofgrannard.consts.ActionConsts.*;
 
@@ -13,7 +11,7 @@ public class Scene_1_1 extends Scenario {
         setName("Old Plains");
 
         //Add Enemies
-        enemies.add(new Slime());
+        enemies.add(new Slime_1());
 
 
         //Add Loot

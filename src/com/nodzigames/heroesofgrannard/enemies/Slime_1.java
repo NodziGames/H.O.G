@@ -2,15 +2,15 @@ package com.nodzigames.heroesofgrannard.enemies;
 
 import com.nodzigames.heroesofgrannard.maths.Maths;
 
-public class Birb extends Enemy {
+public class Slime_1 extends Enemy {
 
-    public Birb() {
+    public Slime_1() {
 
-        setName("Birb");
+        setName("Slime");
 
-        setDefense(0);
+        setDefense(25);
         setStrength(100);
-        setVitality(250);
+        setVitality(200);
         setHp(getVitality());
 
         //Drops
@@ -18,10 +18,11 @@ public class Birb extends Enemy {
         setXp(Maths.random_range_int(15, 25));
 
         //Set Up Shouts
-        shouts.add("Swiggity");
-        shouts.add("Swooty");
-        shouts.add("Do u want sum f*k?");
-        shouts.add("Becky");
-        shouts.add("Ben is a hoe");
+        shouts.add("Slurp!");
+        shouts.add("Swoosh!");
+        shouts.add("Wobble!");
+        shouts.add("Squish!");
+        shouts.add("Splat!");
+
     }
 }
