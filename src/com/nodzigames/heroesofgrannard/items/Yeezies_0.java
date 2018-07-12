@@ -1,8 +1,8 @@
 package com.nodzigames.heroesofgrannard.items;
 
-public class Yeezies_1 extends Armor{
+public class Yeezies_0 extends Armor{
 
-    public Yeezies_1() {
+    public Yeezies_0() {
 
         setDefense(10);
         setIntelligence(10);

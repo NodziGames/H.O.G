@@ -1,8 +1,8 @@
 package com.nodzigames.heroesofgrannard.items;
 
-public class BareFists_1 extends Weapon {
+public class BareFists_0 extends Weapon {
 
-    public BareFists_1() {
+    public BareFists_0() {
 
         setStrength(10);
         setIntelligence(10);

@@ -6,9 +6,9 @@ import static com.nodzigames.heroesofgrannard.consts.ActionConsts.A_EXPLORE;
 import static com.nodzigames.heroesofgrannard.consts.ActionConsts.A_FIGHT;
 import static com.nodzigames.heroesofgrannard.consts.ActionConsts.A_STATS;
 
-public class Scene3 extends Scenario {
+public class Scene_1_3 extends Scenario {
 
-    public Scene3() {
+    public Scene_1_3() {
 
         setDescription("You enter into a daycare center, hoping for a place to rest. Instead, all you can see is toys flying through the air, and children pulling each other's hair while screaming at the top of their lungs. You spot a few odd looking children, but it turns out they're Badabooks disguised as children!");
         setName("Day Care Center");

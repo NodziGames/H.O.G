@@ -1,7 +1,7 @@
 package com.nodzigames.heroesofgrannard.classes;
 
-import com.nodzigames.heroesofgrannard.items.Kamishimo_1;
-import com.nodzigames.heroesofgrannard.items.KendoStick_1;
+import com.nodzigames.heroesofgrannard.items.Kamishimo_0;
+import com.nodzigames.heroesofgrannard.items.KendoStick_0;
 
 public class Samurai extends Player {
     //Constructor
@@ -9,8 +9,8 @@ public class Samurai extends Player {
         setName(name);
         setAge(age);
 
-        weapon = new KendoStick_1();
-        armor = new Kamishimo_1();
+        weapon = new KendoStick_0();
+        armor = new Kamishimo_0();
 
         //Class Specific stats (Has to total 400, and every 5 vitality counts as 1 point)
         setStrength(130);

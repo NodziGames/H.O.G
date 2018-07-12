@@ -73,13 +73,13 @@ public class Stepper {
 
         switch(pick) {
             case 1:
-                scene = new Scene1();
+                scene = new Scene_1_1();
                 break ;
             case 2:
-                scene = new Scene2();
+                scene = new Scene_1_2();
                 break ;
             case 3:
-                scene = new Scene3();
+                scene = new Scene_1_3();
                 break ;
         }
 

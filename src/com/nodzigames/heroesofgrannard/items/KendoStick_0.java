@@ -1,8 +1,8 @@
 package com.nodzigames.heroesofgrannard.items;
 
-public class KendoStick_1 extends Weapon {
+public class KendoStick_0 extends Weapon {
 
-    public KendoStick_1() {
+    public KendoStick_0() {
 
         setStrength(15);
         setIntelligence(5);

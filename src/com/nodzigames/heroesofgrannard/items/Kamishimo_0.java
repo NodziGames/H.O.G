@@ -1,8 +1,8 @@
 package com.nodzigames.heroesofgrannard.items;
 
-public class Kamishimo_1 extends Armor {
+public class Kamishimo_0 extends Armor {
 
-    public Kamishimo_1() {
+    public Kamishimo_0() {
 
         setDefense(5);
         setIntelligence(15);

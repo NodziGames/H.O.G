@@ -1,8 +1,8 @@
 package com.nodzigames.heroesofgrannard.classes;
 
 
-import com.nodzigames.heroesofgrannard.items.BareFists_1;
-import com.nodzigames.heroesofgrannard.items.Yeezies_1;
+import com.nodzigames.heroesofgrannard.items.BareFists_0;
+import com.nodzigames.heroesofgrannard.items.Yeezies_0;
 
 public class Human extends Player{
 
@@ -11,8 +11,8 @@ public class Human extends Player{
         setName(name);
         setAge(age);
 
-        weapon = new BareFists_1();
-        armor = new Yeezies_1();
+        weapon = new BareFists_0();
+        armor = new Yeezies_0();
 
         //Class Specific stats (Has to total 400, and every 5 vitality counts as 1 point)
         setStrength(100);
