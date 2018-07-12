@@ -281,7 +281,7 @@ public class Stepper {
             //Main combat loop here
 
             //Player attack
-            long dmg = player.getStrength() + Maths.random_range_int(-20, 20);
+            long dmg = player.getStrength() + player.weapon.getStrength();
             Renderer.print("You attack the " + enemy.getName() + " for " + dmg + " potential damage!");
             player.shout();
             Renderer.print("\nThe " + enemy.getName() + " blocks " + enemy.getDefense() + " damage");
@@ -301,11 +301,11 @@ public class Stepper {
             }
             else {
                 //Attack the player back
-                long dmg2 = enemy.getStrength() + Maths.random_range_int(-20, 20);
+                long dmg2 = enemy.getStrength() + Maths.random_range_int(-enemy.getStrength() / 10, enemy.getStrength() / 10);
                 Renderer.print("The " + enemy.getName() + " attacks you for " + dmg2 + " potential damage!");
                 enemy.shout();
-                Renderer.print("\nYou block for " + player.getDefense() + " damage");
-                Renderer.print("You take a total of " + Math.max(1, dmg2 - player.getDefense()) + " damage!");
+                Renderer.print("\nYou block for " + (player.getDefense() + player.armor.getDefense()) + " damage");
+                Renderer.print("You take a total of " + Math.max(1, dmg2 - (player.getDefense() + player.armor.getDefense())) + " damage!");
                 player.takeDamage(dmg2);
                 Renderer.print("\nYour HP: " + (player.getHp() + Math.max(1, dmg2 - player.getDefense())) + " -> " + player.getHp());
                 Renderer.print("\n\n");

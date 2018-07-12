@@ -94,7 +94,38 @@ public class Renderer {
     }
 
     public static void gameOver(Player player) {
-        print("Game Over!");
+        print("************************************************************************");
+        print("Unable to withstand any more blows, you faint and pass on to eternity...\n");
+        print("                            ,--.\n" +
+                "                           {    }\n" +
+                "                           K,   }\n" +
+                "                          /  ~Y`\n" +
+                "                     ,   /   /\n" +
+                "                    {_'-K.__/\n" +
+                "                      `/-.__L._\n" +
+                "                      /  ' /`\\_}\n" +
+                "                     /  ' /\n" +
+                "             ____   /  ' /\n" +
+                "      ,-'~~~~    ~~/  ' /_\n" +
+                "    ,'             ``~~~  ',\n" +
+                "   (                        Y\n" +
+                "  {                         I\n" +
+                " {      -                    `,\n" +
+                " |       ',                   )\n" +
+                " |        |   ,..__      __. Y\n" +
+                " |    .,_./  Y ' / ^Y   J   )|\n" +
+                " \\           |' /   |   |   ||\n" +
+                "  \\          L_/    . _ (_,.'(\n" +
+                "   \\,   ,      ^^\"\"' / |      )\n" +
+                "     \\_  \\          /,L]     /\n" +
+                "       '-_~-,       ` `   ./`\n" +
+                "          `'{_            )\n" +
+                "              ^^\\..___,.--`");
+        print("\n\n                R.I.P\n");
+        print("************************************************************************");
+        print("\nHere Lies " + player.getName() + ", an Honorable Level " + player.getLevel() + " " + player.getClass().getSimpleName() + ".");
+        print("\nYou left behind a fortune of " + player.getGold() + " Gold, and asked that it be buried with you so that you can spend it in the afterlife.");
+        print("\n\nGAME OVER...");
     }
 
 

@@ -3,6 +3,8 @@ package com.nodzigames.heroesofgrannard.classes;
 
 //All classes will inherit from the player class, overriding some of the functionality.
 
+import com.nodzigames.heroesofgrannard.items.Armor;
+import com.nodzigames.heroesofgrannard.items.Weapon;
 import com.nodzigames.heroesofgrannard.maths.Maths;
 import com.nodzigames.heroesofgrannard.renderer.Renderer;
 import com.nodzigames.heroesofgrannard.stepper.Stepper;
@@ -27,6 +29,9 @@ public class Player {
     private long xpreq;
     private int level;
     private long gold;
+
+    public Weapon weapon;
+    public Armor armor;
 
     //Arrays
     public List<String> shouts;
@@ -224,13 +229,17 @@ public class Player {
                 "Class: " + getClass().getSimpleName() + "\n" +
                 "\n" +
                 "==== Character Stats ====\n" +
-                "Strength: " + strength + "\n" +
-                "Defense: " + defense + "\n" +
-                "Intelligence: " + intelligence + "\n" +
+                "Strength: " + strength + " + (" + weapon.getStrength() + ")" + "\n" +
+                "Defense: " + defense + " + (" + armor.getDefense() + ") " + "\n" +
+                "Intelligence: " + intelligence + " + (" + (weapon.getIntelligence() + armor.getIntelligence()) + ") " + "\n" +
                 "\n" +
                 "HP: " + hp + " / " + vitality + "\n" +
                 "Gold: " + gold + "\n" +
                 "XP: " + xp + " / " + xpreq + "\n" +
-                "Level: " + level;
+                "Level: " + level + "\n" +
+                "\n" +
+                "======= Equipment =======\n" +
+                "Weapon: " + weapon.toString() + "\n" +
+                "Armor: " + armor.toString();
     }
 }
