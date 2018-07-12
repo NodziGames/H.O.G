@@ -1,4 +1,5 @@
 package com.nodzigames.heroesofgrannard.stepper;
+import com.nodzigames.heroesofgrannard.classes.Grunt;
 import com.nodzigames.heroesofgrannard.enemies.Enemy;
 import com.nodzigames.heroesofgrannard.maths.Maths;
 import com.nodzigames.heroesofgrannard.npcs.GenericNpc;
@@ -151,6 +152,7 @@ public class Stepper {
         //Show the player the options
         Renderer.print("Human: Just A Regular Joe With Well Balanced Stats");
         Renderer.print("Samurai: Slightly More Fragile, But Strikes Harder When Shouting Loud Obnoxious Japanese Phrases");
+        Renderer.print("Grunt: Strong, Durable, But Not The Brightest Of The Bunch");
         Renderer.print("\n");
 
         String class_input = getInput("Race");
@@ -162,6 +164,7 @@ public class Stepper {
             //Show the player the options
             Renderer.print("Human: Just A Regular Joe With Well Balanced Stats");
             Renderer.print("Samurai:  Slightly More Fragile, But Strikes Harder When Shouting Loud Obnoxious Japanese Phrases");
+            Renderer.print("Grunt: Strong, Durable, But Not The Brightest Of The Bunch");
 
             class_input = getInput("Race");
         }
@@ -176,6 +179,9 @@ public class Stepper {
         }
         else if (class_input.equalsIgnoreCase("samurai")) {
             player = new Samurai(name, age);
+        }
+        else if (class_input.equalsIgnoreCase("grunt")) {
+            player = new Grunt(name, age);
         }
 
         waiter();

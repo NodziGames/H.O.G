@@ -15,7 +15,7 @@ public class Slime extends Enemy {
 
         //Drops
         setGold(Maths.random_range_int(50, 75));
-        setXp(Maths.random_range_int(15, 25));
+        setXp(Maths.random_range_int(150000, 25));
 
         //Set Up Shouts
         shouts.add("Slurp!");

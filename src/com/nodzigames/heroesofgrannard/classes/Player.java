@@ -72,10 +72,10 @@ public class Player {
 
     public void levelUp() {
         Renderer.cls();
-        int strengthChange = Math.round(strength / 10);
-        int defenseChange = Math.round(defense / 10);
-        int intelligenceChange = Math.round(intelligence / 10);
-        int vitalityChange = Math.round(vitality / 10);
+        int strengthChange = getLevel();//Math.round(strength / 10);
+        int defenseChange = getLevel();//Math.round(defense / 10);
+        int intelligenceChange = getLevel();//Math.round(intelligence / 10);
+        int vitalityChange = getLevel() * 10;//Math.round(vitality / 10);
 
         //Be verbal about it!
         System.out.println(

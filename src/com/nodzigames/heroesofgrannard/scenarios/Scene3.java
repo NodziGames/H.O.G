@@ -10,7 +10,7 @@ public class Scene3 extends Scenario {
 
     public Scene3() {
 
-        setDescription("You enter into a daycare center, hoping for a place to rest. All you can see is toys flying through the air, children pulling each other's hair and screaming at the top of their lungs. You spot a few odd looking children, but it turns out they're Badabooks disguised as children!");
+        setDescription("You enter into a daycare center, hoping for a place to rest. Instead, all you can see is toys flying through the air, and children pulling each other's hair while screaming at the top of their lungs. You spot a few odd looking children, but it turns out they're Badabooks disguised as children!");
         setName("Day Care Center");
 
         //Add Enemies
