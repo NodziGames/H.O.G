@@ -268,9 +268,11 @@ public class Stepper {
                 moves -= 1;
             } else if (action.equals(A_SLEEP)) {
                 Renderer.cls();
-                Renderer.print("You decide to take a short nap that turns into hours of sleeping. You wake up feeling refreshed!\n");
-                player.setHp(player.getVitality());
-                Renderer.printEvent("HP Fully Restored!");
+                Renderer.print("You decide to take a short nap that turns into hours of sleeping...\n");
+                Renderer.print("You dream about immortality, the meaning of life, and prove that the earth is flat while asleep.");
+                Renderer.print("You wake up feeling great!\n");
+                player.setHp(Math.min(player.getHp() + player.getIntelligence(), player.getVitality()));
+                Renderer.printEvent(player.getIntelligence() + " HP Restored!");
                 scene.actions.remove(A_SLEEP);
             } else if (action.equals(A_STATS)) {
                 Renderer.cls();
