@@ -1,6 +1,10 @@
 package com.nodzigames.heroesofgrannard.stepper;
 import com.nodzigames.heroesofgrannard.classes.Grunt;
 import com.nodzigames.heroesofgrannard.enemies.Enemy;
+import com.nodzigames.heroesofgrannard.items.Armor;
+import com.nodzigames.heroesofgrannard.items.FlimsyKatana_1;
+import com.nodzigames.heroesofgrannard.items.Weapon;
+import com.nodzigames.heroesofgrannard.items.Yukata_1;
 import com.nodzigames.heroesofgrannard.maths.Maths;
 import com.nodzigames.heroesofgrannard.npcs.GenericNpc;
 import com.nodzigames.heroesofgrannard.classes.Human;
@@ -277,7 +281,7 @@ public class Stepper {
             } else if (action.equals(A_LOOT)) {
                 Renderer.cls();
                 if (scene.enemies.size() == 0) {
-                    Renderer.printEvent("You Loot The Pile");
+                    loot();
                     scene.actions.remove(A_LOOT);
                 }
                 else {
@@ -364,5 +368,71 @@ public class Stepper {
         moves = 10;
         //Increase portalLevel here too!
         waiter();
+    }
+
+    public void loot() {
+        Renderer.printEvent("You Rummage Through The Loot Pile\n");
+
+        if (portalLevel == 1) {
+            int pick = Maths.random_range_int(1, 2);
+
+            switch(pick) {
+                case 1:
+                    equipWeapon(new FlimsyKatana_1());
+                    break ;
+                case 2:
+                    equipArmor(new Yukata_1());
+                    break ;
+            }
+
+        }
+    }
+
+    public void equipWeapon(Weapon weapon) {
+        Renderer.print("You found a " + weapon.getName() + "!");
+        Renderer.print("\nCurrent Weapon: " + player.weapon.toString());
+        Renderer.print("\nNew Weapon: " + weapon.toString());
+
+        String e_input = getInput("Equip? (Y/N)");
+
+        while (!Parser.parseEquip(e_input)) {
+            Renderer.print("That's not an option! Yes (Y) or No (N)?");
+            e_input = getInput("Equip? (Y/N)");
+        }
+
+        if (e_input.toLowerCase().equals("y") || e_input.toLowerCase().equals("yes")) {
+            player.weapon = weapon;
+            Renderer.print("");
+            Renderer.printEvent("You equip the " + weapon.getName() + "!");
+
+        }
+        else if (e_input.toLowerCase().equals("n") || e_input.toLowerCase().equals("no")) {
+            Renderer.print("");
+            Renderer.printEvent("You leave behind the " + weapon.getName() + "...");
+        }
+    }
+
+    public void equipArmor(Armor armor) {
+        Renderer.print("You found a " + armor.getName() + "!");
+        Renderer.print("\nCurrent Armor: " + player.armor.toString());
+        Renderer.print("\nNew Armor: " + armor.toString());
+
+        String e_input = getInput("Equip? (Y/N)");
+
+        while (!Parser.parseEquip(e_input)) {
+            Renderer.print("That's not an option! Yes (Y) or No (N)?");
+            e_input = getInput("Equip? (Y/N)");
+        }
+
+        if (e_input.toLowerCase().equals("y") || e_input.toLowerCase().equals("yes")) {
+            player.armor = armor;
+            Renderer.print("");
+            Renderer.printEvent("You equip the " + armor.getName() + "!");
+
+        }
+        else if (e_input.toLowerCase().equals("n") || e_input.toLowerCase().equals("no")) {
+            Renderer.print("");
+            Renderer.printEvent("You leave behind the " + armor.getName() + "...");
+        }
     }
 }

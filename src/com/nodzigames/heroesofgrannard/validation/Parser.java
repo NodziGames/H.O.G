@@ -30,7 +30,7 @@ public class Parser {
     public static boolean classParse(String class_input) {
 
         class_input = class_input.toLowerCase();
-        if (!class_input.contains("human") && !class_input.contains("samurai") && !(class_input.contains("grunt"))) {
+        if (!class_input.equals("human") && !class_input.equals("samurai") && !(class_input.equals("grunt"))) {
             return false;
         }
         else
@@ -60,5 +60,16 @@ public class Parser {
             return(action);
         else
             return(A_NONE);
+    }
+
+    public static boolean parseEquip(String input) {
+        input = input.toLowerCase();
+
+        if (input.equals("yes") || input.equals("y") || input.equals("no") || input.equals("n")) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }
