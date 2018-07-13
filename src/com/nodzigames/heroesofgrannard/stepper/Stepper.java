@@ -310,7 +310,9 @@ public class Stepper {
             }
         }
 
-        town();
+        if (player.getHp() > 0) {
+            town();
+        }
 
 
 
@@ -385,7 +387,27 @@ public class Stepper {
     }
 
     public void loot() {
-        Renderer.printEvent("You Rummage Through The Loot Pile\n");
+        Renderer.printEvent("You Rummage Through The Loot Pile");
+
+        Renderer.print("\n                          _.--.\n" +
+                "                        _.-'_:-'||\n" +
+                "                    _.-'_.-::::'||\n" +
+                "               _.-:'_.-::::::'  ||\n" +
+                "             .'`-.-:::::::'     ||\n" +
+                "            /.'`;|:::::::'      ||_\n" +
+                "           ||   ||::::::'     _.;._'-._\n" +
+                "           ||   ||:::::'  _.-!oo @.!-._'-.\n" +
+                "           \\'.  ||:::::.-!()oo @!()@.-'_.|\n" +
+                "            '.'-;|:.-'.&$@.& ()$%-'o.'\\U||\n" +
+                "              `>'-.!@%()@'@_%-'_.-o _.|'||\n" +
+                "               ||-._'-.@.-'_.-' _.-o  |'||\n" +
+                "               ||=[ '-._.-\\U/.-'    o |'||\n" +
+                "               || '-.]=|| |'|      o  |'||\n" +
+                "               ||      || |'|        _| ';\n" +
+                "               ||      || |'|    _.-'_.-'\n" +
+                "               |'-._   || |'|_.-'_.-'\n" +
+                "                '-._'-.|| |' `_.-'\n" +
+                "                    '-.||_/.-'\n\n");
 
         if (portalLevel == 1) {
             int pick = Maths.random_range_int(1, 6);
