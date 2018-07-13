@@ -76,7 +76,7 @@ public class Stepper {
 
     public void changeScene() {
 
-        int pick = Maths.random_range_int(1,5);
+        int pick = Maths.random_range_int(1, 10);
 
         if (portalLevel == 1) {
             switch (pick) {
@@ -94,6 +94,21 @@ public class Stepper {
                     break ;
                 case 5:
                     scene = new Scene_1_5();
+                    break ;
+                case 6:
+                    scene = new Scene_1_6();
+                    break ;
+                case 7:
+                    scene = new Scene_1_7();
+                    break ;
+                case 8:
+                    scene = new Scene_1_8();
+                    break ;
+                case 9:
+                    scene = new Scene_1_9();
+                    break ;
+                case 10:
+                    scene = new Scene_1_10();
                     break ;
             }
         }
