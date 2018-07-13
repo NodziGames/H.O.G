@@ -1,10 +1,7 @@
 package com.nodzigames.heroesofgrannard.stepper;
 import com.nodzigames.heroesofgrannard.classes.Grunt;
 import com.nodzigames.heroesofgrannard.enemies.Enemy;
-import com.nodzigames.heroesofgrannard.items.Armor;
-import com.nodzigames.heroesofgrannard.items.FlimsyKatana_1;
-import com.nodzigames.heroesofgrannard.items.Weapon;
-import com.nodzigames.heroesofgrannard.items.Yukata_1;
+import com.nodzigames.heroesofgrannard.items.*;
 import com.nodzigames.heroesofgrannard.maths.Maths;
 import com.nodzigames.heroesofgrannard.npcs.GenericNpc;
 import com.nodzigames.heroesofgrannard.classes.Human;
@@ -376,7 +373,7 @@ public class Stepper {
         Renderer.printEvent("You Rummage Through The Loot Pile\n");
 
         if (portalLevel == 1) {
-            int pick = Maths.random_range_int(1, 2);
+            int pick = Maths.random_range_int(1, 6);
 
             switch(pick) {
                 case 1:
@@ -384,6 +381,18 @@ public class Stepper {
                     break ;
                 case 2:
                     equipArmor(new Yukata_1());
+                    break ;
+                case 3:
+                    equipWeapon(new Boulder_1());
+                    break ;
+                case 4:
+                    equipArmor(new Tutu_1());
+                    break ;
+                case 5:
+                    equipWeapon(new KnuckleDusters_1());
+                    break ;
+                case 6:
+                    equipArmor(new Overcoat_1());
                     break ;
             }
 
