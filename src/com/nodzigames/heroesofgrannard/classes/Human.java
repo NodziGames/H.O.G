@@ -14,7 +14,7 @@ public class Human extends Player{
         weapon = new BareFists_0();
         armor = new Yeezies_0();
 
-        //Class Specific stats (Has to total 400, and every 5 vitality counts as 1 point)
+        //Class Specific stats (Has to total 400, and every 5 vitality counts as 2 point)
         setStrength(100);
         setDefense(100);
         setIntelligence(100);

@@ -13,11 +13,11 @@ public class Grunt extends Player{
         weapon = new Rock_0();
         armor = new Speedo_0();
 
-        //Class Specific stats (Has to total 400, and every 5 vitality counts as 1 point)
+        //Class Specific stats (Has to total 400, and every 5 vitality counts as 2 point)
         setStrength(125);
         setDefense(125);
         setIntelligence(50);
-        setVitality(700);
+        setVitality(600);
         setHp(getVitality());
 
         //Set Up Shouts

@@ -1,12 +1,9 @@
 package com.nodzigames.heroesofgrannard.stepper;
-import com.nodzigames.heroesofgrannard.classes.Grunt;
+import com.nodzigames.heroesofgrannard.classes.*;
 import com.nodzigames.heroesofgrannard.enemies.Enemy;
 import com.nodzigames.heroesofgrannard.items.*;
 import com.nodzigames.heroesofgrannard.maths.Maths;
 import com.nodzigames.heroesofgrannard.npcs.GenericNpc;
-import com.nodzigames.heroesofgrannard.classes.Human;
-import com.nodzigames.heroesofgrannard.classes.Player;
-import com.nodzigames.heroesofgrannard.classes.Samurai;
 import com.nodzigames.heroesofgrannard.renderer.Renderer;
 import com.nodzigames.heroesofgrannard.scenarios.Scenario;
 import com.nodzigames.heroesofgrannard.scenarios.*;
@@ -183,6 +180,7 @@ public class Stepper {
         Renderer.print("Human: Just A Regular Joe With Well Balanced Stats");
         Renderer.print("Samurai: Slightly More Fragile, But Strikes Harder When Shouting Loud Obnoxious Japanese Phrases");
         Renderer.print("Grunt: Strong, Durable, But Not The Brightest Of The Bunch");
+        Renderer.print("Scholar: Extremely Smart, Can Take An Acceptable Amount Of Blows, But Hits Like A Girl");
         Renderer.print("\n");
 
         String class_input = getInput("Class");
@@ -193,8 +191,9 @@ public class Stepper {
             hagrid.speak("No no no, that is not a valid race. Please select one from the list below!\n");
             //Show the player the options
             Renderer.print("Human: Just A Regular Joe With Well Balanced Stats");
-            Renderer.print("Samurai:  Slightly More Fragile, But Strikes Harder When Shouting Loud Obnoxious Japanese Phrases");
+            Renderer.print("Samurai: Slightly More Fragile, But Strikes Harder When Shouting Loud Obnoxious Japanese Phrases");
             Renderer.print("Grunt: Strong, Durable, But Not The Brightest Of The Bunch");
+            Renderer.print("Scholar: Extremely Smart, Can Take An Acceptable Amount Of Blows, But Hits Like A Girl");
 
             class_input = getInput("Class");
         }
@@ -212,6 +211,9 @@ public class Stepper {
         }
         else if (class_input.equalsIgnoreCase("grunt")) {
             player = new Grunt(name, age);
+        }
+        else  if (class_input.equalsIgnoreCase("scholar")) {
+            player = new Scholar(name, age);
         }
 
         waiter();
@@ -283,8 +285,8 @@ public class Stepper {
                 Renderer.print("You decide to take a short nap that turns into hours of sleeping...\n");
                 Renderer.print("You dream about immortality, the meaning of life, and prove that the earth is flat while asleep.");
                 Renderer.print("You wake up feeling great!\n");
-                player.setHp(Math.min(player.getHp() + player.getIntelligence(), player.getVitality()));
-                Renderer.printEvent(player.getIntelligence() + " HP Restored!");
+                player.setHp(Math.min(player.getHp() + player.getIntelligence() + player.armor.getIntelligence() + player.weapon.getIntelligence(), player.getVitality()));
+                Renderer.printEvent((player.getIntelligence() + player.armor.getIntelligence() + player.weapon.getIntelligence()) + " HP Restored!");
                 scene.actions.remove(A_SLEEP);
             } else if (action.equals(A_STATS)) {
                 Renderer.cls();
@@ -411,7 +413,7 @@ public class Stepper {
                 "                    '-.||_/.-'\n\n");
 
         if (portalLevel == 1) {
-            int pick = Maths.random_range_int(1, 6);
+            int pick = Maths.random_range_int(1, 8);
 
             switch(pick) {
                 case 1:
@@ -431,6 +433,12 @@ public class Stepper {
                     break ;
                 case 6:
                     equipArmor(new Overcoat_1());
+                    break ;
+                case 7:
+                    equipWeapon(new WalkingCane_1());
+                    break ;
+                case 8:
+                    equipArmor(new GraduationCap_1());
                     break ;
             }
 
