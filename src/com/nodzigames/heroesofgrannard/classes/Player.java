@@ -111,7 +111,7 @@ public class Player {
 
     public long takeDamage(long damage) {
 
-        long damageToTake = Math.max(1, damage - defense);
+        long damageToTake = Math.max(1, damage - (defense + armor.getDefense()));
 
         hp -= damageToTake;
 
