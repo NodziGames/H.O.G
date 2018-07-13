@@ -55,6 +55,10 @@ public class Scenario {
                     break ;
                 case A_SLEEP:
                     System.out.print("(S) ");
+                    break ;
+                case A_LOOT:
+                    System.out.print("(L) ");
+                    break ;
             }
             if (action.equals(A_EXPLORE))
                 Renderer.print("< " + action + " >" + " Moves Left: " + moves + " / 10");

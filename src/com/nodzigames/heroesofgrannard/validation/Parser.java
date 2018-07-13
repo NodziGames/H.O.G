@@ -53,6 +53,9 @@ public class Parser {
         if (action.equals("s"))
             action = A_SLEEP;
 
+        if (action.equals("l"))
+            action = A_LOOT;
+
         if (actions.contains(action))
             return(action);
         else

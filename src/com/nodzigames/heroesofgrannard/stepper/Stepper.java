@@ -75,7 +75,7 @@ public class Stepper {
 
     public void changeScene() {
 
-        int pick = Maths.random_range_int(1,4);
+        int pick = Maths.random_range_int(1,5);
 
         if (portalLevel == 1) {
             switch (pick) {
@@ -90,6 +90,9 @@ public class Stepper {
                     break;
                 case 4:
                     scene = new Scene_1_4();
+                    break ;
+                case 5:
+                    scene = new Scene_1_5();
                     break ;
             }
         }
@@ -271,6 +274,15 @@ public class Stepper {
             } else if (action.equals(A_FIGHT)) {
                 Renderer.cls();
                 fight(scene.enemies.get(0));
+            } else if (action.equals(A_LOOT)) {
+                Renderer.cls();
+                if (scene.enemies.size() == 0) {
+                    Renderer.printEvent("You Loot The Pile");
+                    scene.actions.remove(A_LOOT);
+                }
+                else {
+                    Renderer.print("You desperately reach for the loot pile, but there are enemies blocking your way!");
+                }
             }
 
             //Level up already has a waiter() inside of it, so don't call waiter if player levelled up!
