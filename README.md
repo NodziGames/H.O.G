@@ -1,8 +1,10 @@
 # H.O.G
-Heroes Of Grannard, The Open Source Roguelike Ascii Game!
+Heroes Of Grannard, The Roguelike Ascii Game!
 
 
-Heroes of Grannard is fully open source. You may use the code to create your own game, and no credit is required at all! If you really wanted to you could redistribute it as is, I won't take offense, but keep in mind that credit would be much appreciated if you plan to do that.
+Heroes of Grannard is being created to help my further my Java abilities. The code has been left visible to the public for learning purposes. You may build a game based on the code you can find here, but please do not redistribute it as is, or claim it as your own.
+
+Any product you build based on this code may be distributed commercially or non-commercialy, but please give appropriate credit.
 
 For any inquiries about the project, connect with me via any these means:
 
